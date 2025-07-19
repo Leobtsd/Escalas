@@ -1,0 +1,189 @@
+
+    :root {
+      --turno-1: #4a90e2;
+      --turno-2: #27ae60;
+      --turno-3: #f1c40f;
+      --folguista: #e74c3c;
+      --hoje: #8e44ad;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f6f8;
+      color: #333;
+    }
+
+    header {
+      background-color: #fff;
+      padding: 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 28px;
+      color: #2c3e50;
+    }
+
+    .legend {
+      margin: 20px 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .legend span {
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 14px;
+      color: #fff;
+      font-weight: bold;
+    }
+
+    .turno-1 { background-color: var(--turno-1); }
+    .turno-2 { background-color: var(--turno-2); }
+    .turno-3 { background-color: var(--turno-3); color: #000; }
+    .folguista { background-color: var(--folguista); }
+    .hoje { background-color: var(--hoje); }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .mes-controles {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+        position: relative;
+    }
+
+    button {
+        width: 140px; /* largura fixa */
+        padding: 8px 16px;
+        font-size: 16px;
+        background-color: #3498db;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+    }
+
+    #mesAno {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        font-weight: bold;
+        font-size: 38px;
+    }
+
+
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+
+    td {
+      width: 14.28%;
+      height: 80px;
+      text-align: center;
+      vertical-align: middle;
+      border: 1px solid #ecf0f1;
+      font-weight: bold;
+      position: relative;
+      transition: background 0.3s ease;
+    }
+
+    td:hover {
+      background-color: #f0f3f5;
+    }
+
+    .empty {
+      background-color: #fafafa;
+    }
+
+    .today {
+      outline: 3px solid var(--hoje);
+      outline-offset: -3px;
+      border-radius: 6px;
+    }
+
+    small {
+      display: block;
+      font-size: 11px;
+      font-weight: normal;
+      margin-top: 4px;
+    }
+
+    thead tr {
+  background-color: #2980b9;
+  color: white;
+  font-weight: bold;
+  user-select: none;
+}
+
+thead th {
+  padding: 12px 0;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 20px;
+  }
+
+  .container {
+    padding: 10px;
+  }
+
+  #mesAno {
+    font-size: 19px;
+     white-space: nowrap;
+  }
+
+  .mes-controles {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  button {
+    width: auto;
+    font-size: 14px;
+    padding: 10px 12px;
+  }
+
+  table {
+    font-size: 12px;
+  }
+
+  td {
+    height: 60px;
+    padding: 4px;
+  }
+
+  small {
+    font-size: 9px;
+  }
+
+  .legend {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
+  }
+
+  .legend span {
+    font-size: 12px;
+    padding: 5px 10px;
+  }
+}
