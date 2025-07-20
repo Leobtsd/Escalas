@@ -7,7 +7,7 @@
   ];
 
   // Data fixa onde a rotação começou
-  const dataReferencia = new Date(2025, 6, 19); // 17/07/2025 (mês 6 = julho)
+  const dataReferencia = new Date(2025, 6,20); // 17/07/2025 (mês 6 = julho)
   const idxReferencia = 0; // posição do turno-3 no array
 
   const hojeReal = new Date();
