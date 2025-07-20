@@ -1,10 +1,15 @@
 
   const diasTurnos = [
-    'turno-2', 'turno-2',   
-    'turno-3', 'turno-3',    
+    'turno-3', 'turno-3',
     'folguista', 'folguista',
-    'turno-1', 'turno-1'     
+    'turno-1', 'turno-1',
+    'turno-2', 'turno-2'
   ];
+
+  // Data fixa onde a rotação começou
+  const dataReferencia = new Date(2025, 6, 17); // 17/07/2025 (mês 6 = julho)
+  const idxReferencia = 0; // posição do turno-3 no array
+
   const hojeReal = new Date();
   let mesAtual = hojeReal.getMonth();
   let anoAtual = hojeReal.getFullYear();
@@ -17,10 +22,6 @@
   const tabela = document.getElementById('calendario');
 
   function gerarCalendario(mes, ano) {
-  const ontem = new Date(hojeReal);
-  ontem.setDate(hojeReal.getDate() - 1);
-  ontem.setHours(0, 0, 0, 0);
-
     const primeiroDia = new Date(ano, mes, 1);
     const ultimoDia = new Date(ano, mes + 1, 0);
     const totalDias = ultimoDia.getDate();
@@ -45,8 +46,10 @@
 
     for (let dia = 1, diaSemana = inicioSemana; dia <= totalDias; dia++, diaSemana++) {
       const dataAtual = new Date(ano, mes, dia);
-      const diffDias = Math.floor((dataAtual - ontem) / (1000 * 60 * 60 * 24));
-      const idx = ((diffDias % 8) + 8) % 8;
+
+      // diferença de dias a partir da referência
+      const diffDias = Math.floor((dataAtual - dataReferencia) / (1000 * 60 * 60 * 24));
+      const idx = ((idxReferencia + diffDias) % 8 + 8) % 8;
       const classe = diasTurnos[idx];
 
       const pad = n => n.toString().padStart(2, '0');
@@ -76,7 +79,6 @@
     }
 
     html += '</tr></tbody>';
-
     tabela.innerHTML = html;
   }
 
@@ -93,3 +95,4 @@
   }
 
   gerarCalendario(mesAtual, anoAtual);
+
