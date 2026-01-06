@@ -16,7 +16,7 @@
 
   const feriadosNacionais = ['01-01', '21-04', '01-05', '07-09', '12-10', '02-11', '15-11', '25-12'];
   const feriadosJP = ['05-08', '24-06'];
-  const feriadosAlhandra = ['20-01', '15-08'];
+  const feriadosAlhandra = ['15-08'];
 
   const mesAnoEl = document.getElementById('mesAno');
   const tabela = document.getElementById('calendario');
